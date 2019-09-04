@@ -14,8 +14,8 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 
 ### 1- Installing Ruby
 
-- Clone the repository by running `git clone git@github.com:Wolox/rails-bootstrap.git`
-- Go to the project root by running `cd rails-bootstrap`
+- Clone the repository by running `git clone git@github.com:Wolox/rails-graphql-bootstrap.git`
+- Go to the project root by running `cd rails-graphql-bootstrap`
 - Download and install [Rbenv](https://github.com/rbenv/rbenv#basic-github-checkout).
 - Download and install [Ruby-Build](https://github.com/rbenv/ruby-build#installing-as-an-rbenv-plugin-recommended).
 - Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
@@ -52,7 +52,7 @@ Run in terminal:
 
 ```bash
   sudo -u postgres psql
-  CREATE ROLE "rails-bootstrap" LOGIN CREATEDB PASSWORD 'rails-bootstrap';
+  CREATE ROLE "rails-graphql-bootstrap" LOGIN CREATEDB PASSWORD 'rails-graphql-bootstrap';
 ```
 
 Log out from postgres and run:

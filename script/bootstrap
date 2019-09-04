@@ -10,8 +10,8 @@ system('rm -rf coverage')
 puts "Setting App name: #{app_name}..."
 Dir.glob('**/*', File::FNM_DOTMATCH).reject { |f| f['.git'] || f['script'] }.each do |name|
   next unless File.file?(name) && name != '.DS_Store'
-  out = File.read(name).gsub('rails-bootstrap', app_name)
-  out = out.gsub('RailsBootstrap', app_name.tr('-', '_').split('_').map(&:capitalize).join)
+  out = File.read(name).gsub('rails-graphql-bootstrap', app_name)
+  out = out.gsub('RailsGraphqlBootstrap', app_name.tr('-', '_').split('_').map(&:capitalize).join)
   File.open(name, 'w+') do |f|
     f << out
   end
@@ -21,7 +21,7 @@ end
 readme = File.read('README.md')
 readme.gsub!(
   '[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox' \
-  '/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_' \
+  '/rails-graphql-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_' \
   "content=badge)\n",
   ''
 )
