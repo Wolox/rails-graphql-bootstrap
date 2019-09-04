@@ -16,9 +16,6 @@ gem 'sidekiq', '~> 5.2'
 gem 'sidekiq-failures'
 gem 'sidekiq_mailer'
 
-# Authorization Policies
-gem 'pundit'
-
 # Exceptions Report
 gem 'rollbar'
 
