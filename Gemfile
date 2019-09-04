@@ -1,89 +1,41 @@
 source 'https://rubygems.org'
 
-ruby '2.6.1'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.1.7'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 3.7'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# gem 'jbuilder', '~> 2.5'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
-gem 'therubyracer', platforms: :ruby
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
 
-# Sidekiq
-gem 'sidekiq', '~> 5.2'
-gem 'sidekiq-failures'
-gem 'sidekiq_mailer'
-
-# Exceptions Report
-gem 'rollbar'
-
-gem 'recipient_interceptor'
-# CORS support
-gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
-
-# Use for DoS attacks
-gem 'rack-attack'
-
-gem 'health_check', '~> 3.0'
-
-group :development do
-  # Gem to detect N+1 queries
-  gem 'bullet'
-  gem 'listen', '~> 3.1.5'
-  # Spring speeds up development by keeping your application running in the background.
-  # Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.1'
-
-end
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# gem 'rack-cors'
 
 group :development, :test do
-  gem 'awesome_print'
-
-  # Loads ENV variables from .env file in base folder
-  gem 'dotenv-rails'
-
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-
-  gem 'factory_bot_rails'
-  gem 'faker'
-
-  # Lints
-  gem 'rubocop', '~> 0.65.0', require: false
-  gem 'rubocop-rspec', '~> 1.32'
-
-  # Static analysis for security vulnerabilities
-  gem 'brakeman', require: false
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-group :test do
-  gem 'database_cleaner'
-  gem 'rspec-mocks'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-
-  gem 'capybara'
-  gem 'formulaic'
-  gem 'launchy'
-
-  gem 'timecop'
-  gem 'webmock'
-
-  # CodeStats
-  gem 'codestats-metrics-reporter', '0.1.9', require: nil
-  gem 'rubycritic', require: false
-  gem 'simplecov', require: false
-
-  # Solves 'NoMethodError: assert_template has been extracted to a gem.' as suggested by rspec
-  # This error was thrown when using `expect(response).to render_template('template')`
-  gem 'rails-controller-testing'
-
-  gem 'rack-test', require: 'rack/test'
+group :development do
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  gem 'rails_12factor'
-end
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

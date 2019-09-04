@@ -1,5 +1,0 @@
-test: &test
-  adapter: postgresql
-  encoding: utf8
-  database: rails-graphql-bootstrap_test
-  username: postgres
