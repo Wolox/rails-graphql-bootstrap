@@ -30,7 +30,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'brakeman', require: false
+  gem 'rubycritic', require: false
+
   gem 'faker'
+
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
