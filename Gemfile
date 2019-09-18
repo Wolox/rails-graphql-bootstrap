@@ -33,6 +33,8 @@ group :development, :test do
   gem 'rubycritic', require: false
 
   gem 'faker'
+  gem 'factory_bot_rails'
+
 
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
