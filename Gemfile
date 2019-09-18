@@ -33,7 +33,6 @@ group :development, :test do
   gem 'rubycritic', require: false
 
   gem 'faker'
-  gem 'rspec-rails'
 
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
@@ -47,6 +46,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'bullet'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
