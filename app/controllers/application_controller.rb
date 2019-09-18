@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
-  protect_from_forgery with: :null_session
-
   # i18n configuration. See: http://guides.rubyonrails.org/i18n.html
   before_action :set_locale
 
