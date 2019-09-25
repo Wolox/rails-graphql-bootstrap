@@ -25,7 +25,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
-gem 'health_check'
+# gem 'health_check' This gem causes a deprecation warning in Rails 6, also it seems to be unmaintained.
 gem 'rack-attack'
 
 group :development, :test do
@@ -56,6 +56,7 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
