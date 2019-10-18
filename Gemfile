@@ -38,11 +38,12 @@ group :development, :test do
 
   gem 'faker'
   gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'webmock'
 
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'rspec-rails'
 end
 
 group :development do

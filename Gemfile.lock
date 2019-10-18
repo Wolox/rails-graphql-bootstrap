@@ -76,6 +76,8 @@ GEM
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.1.5)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.5)
     database_cleaner (1.7.0)
     descendants_tracker (0.0.4)
@@ -104,6 +106,7 @@ GEM
       sexp_processor (~> 4.8)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hashdiff (1.0.0)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -227,6 +230,7 @@ GEM
       ruby_parser (~> 3.8)
       tty-which (~> 0.4.0)
       virtus (~> 1.0)
+    safe_yaml (1.0.5)
     sexp_processor (4.13.0)
     shoulda-matchers (4.1.2)
       activesupport (>= 4.2.0)
@@ -258,6 +262,10 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    webmock (3.7.6)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -291,6 +299,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  webmock
 
 RUBY VERSION
    ruby 2.6.4p104
