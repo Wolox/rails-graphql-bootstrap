@@ -243,6 +243,8 @@ GEM
       rack (>= 2.0.0)
       rack-protection (>= 2.0.0)
       redis (>= 4.1.0)
+    sidekiq-failures (1.0.0)
+      sidekiq (>= 4.0.0)
     simplecov (0.17.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -305,6 +307,7 @@ DEPENDENCIES
   rubycritic
   shoulda-matchers
   sidekiq
+  sidekiq-failures
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
