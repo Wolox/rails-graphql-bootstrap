@@ -1,5 +1,4 @@
-url = ENV['REDISCLOUD_URL'] || ENV['REDISTOGO_URL'] ||
-      "redis://#{ENV.fetch('REDIS_1_PORT_6379_TCP_ADDR', '127.0.0.1')}:6379"
+url = "redis://#{ENV.fetch('REDIS_HOST', '127.0.0.1')}:6379"
 
 Sidekiq.configure_server do |config|
   config.redis = { url: url }
