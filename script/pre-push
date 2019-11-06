@@ -19,7 +19,7 @@ RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
 
 if [ $? -eq 1 ]
 then
-  echo "\033[34mCan't commit! You have rubocop offences!!!\033[0m"
+  echo "\033[34mCan't commit! You have Rubocop offences!!!\033[0m"
   exit 1
 fi
 
@@ -29,7 +29,17 @@ RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
 
 if [ $? -eq 1 ]
 then
-  echo "\033[34mCan't commit! You have brakeman offences!!!\033[0m"
+  echo "\033[34mCan't commit! You have Brakeman offences!!!\033[0m"
+  exit 1
+fi
+
+echo "\033[34mRunning RubyCritic\033[0m"
+RUN_CHECK_CMD='bundle exec rubycritic --minimum-score 80 --no-browser'
+RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
+
+if [ $? -eq 1 ]
+then
+  echo "\033[34mCan't commit! You have RubyCritic offences!!!\033[0m"
   exit 1
 fi
 
