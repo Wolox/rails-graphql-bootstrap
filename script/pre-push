@@ -33,6 +33,16 @@ then
   exit 1
 fi
 
+echo "\033[34mRunning bundler-audit\033[0m"
+RUN_CHECK_CMD='bundle audit check --update --quiet'
+RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
+
+if [ $? -eq 1 ]
+then
+  echo "\033[34mCan't commit! You have bundler-audit offences!!!\033[0m"
+  exit 1
+fi
+
 echo "\033[34mRunning RubyCritic\033[0m"
 RUN_CHECK_CMD='bundle exec rubycritic --minimum-score 80 --no-browser'
 RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`

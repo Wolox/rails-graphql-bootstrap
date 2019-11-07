@@ -16,6 +16,8 @@ steps:
     - bundle exec rspec spec -fd
   security:
     - bundle exec brakeman -q --no-summary
+  audit:
+    - bundle audit check --update --quiet
 
 environment:
   RAILS_ENV: test

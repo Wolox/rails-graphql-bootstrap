@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'brakeman', require: false
+  gem 'bundler-audit', require: false
   gem 'rubycritic', require: false
 
   gem 'faker'
