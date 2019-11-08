@@ -148,7 +148,7 @@ You can find more documentation in the [docs](docs) folder. The documentation av
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Run rspec tests (`bundle exec rspec spec -fd`)
-5. Run rubocop lint (`bundle exec rubocop app spec -R`)
+5. Run rubocop lint (`bundle exec rubocop app spec`)
 6. Push your branch (`git push origin my-new-feature`)
 7. Create a new Pull Request
 
