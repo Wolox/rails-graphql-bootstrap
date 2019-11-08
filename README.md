@@ -50,7 +50,7 @@ bundle install
 
 ### [Kickoff] Application Setup
 
-Run `./script/bootstrap app_name` where `app_name` is your application name.
+Run `./script/bootstrap app-name` where `app-name` is your application name.
 
 Your app is ready. Happy coding!
 
