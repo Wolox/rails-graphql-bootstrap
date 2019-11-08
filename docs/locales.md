@@ -315,7 +315,7 @@ es:
   application:
     index:
       messages:
-        welcome: Bienvenido al Bootstrap de Rails
+        welcome: Bienvenido a RailsGraphqlBootstrap
     messages:
       alerts:
         user_not_authorized: No está autorizado para realizar esta acción
