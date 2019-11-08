@@ -1,10 +1,10 @@
-RailsBootstrap
+RailsGraphQLBootstrap
 ===============
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-graphql-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)](https://rollbar.com)
 
-`[![Codestats](http://codestats-url/organizations/your-organization/projects/rails-bootstrap/badge)](http://codestats-url/organizations/your-organization/projects/rails-bootstrap/badge)`
+`[![Codestats](http://codestats-url/organizations/your-organization/projects/rails-graphql-bootstrap/badge)](http://codestats-url/organizations/your-organization/projects/rails-graphql-bootstrap/badge)`
 
 Kickoff for Rails web applications.
 
@@ -23,8 +23,8 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 
 ### 1- Installing Ruby
 
-- Clone the repository by running `git clone git@github.com:Wolox/rails-bootstrap.git`
-- Go to the project root by running `cd rails-bootstrap`
+- Clone the repository by running `git clone git@github.com:Wolox/rails-graphql-bootstrap.git`
+- Go to the project root by running `cd rails-graphql-bootstrap`
 - Download and install Rbenv and Ruby-Build as instructed by [GoRails guide](https://gorails.com/setup).
 - Install the appropriate Ruby version by running `rbenv install`.
 
@@ -60,7 +60,7 @@ Run in terminal:
 
 ```bash
 sudo -u postgres psql
-CREATE ROLE "rails-bootstrap" LOGIN CREATEDB PASSWORD 'rails-bootstrap';
+CREATE ROLE "rails-graphql-bootstrap" LOGIN CREATEDB PASSWORD 'rails-graphql-bootstrap';
 ```
 
 Log out from postgres and run:
@@ -160,7 +160,7 @@ This project is maintained by [Wolox](https://github.com/wolox) and it is writte
 
 ## License
 
-**rails-bootstrap** is available under the MIT [license](LICENSE).
+**rails-graphql-bootstrap** is available under the MIT [license](LICENSE).
 
     Copyright (c) 2019 X <X@wolox.com.ar>
 
