@@ -1,11 +1,6 @@
 RailsGraphqlBootstrap
 ===============
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Wolox/rails-graphql-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Error Tracking](https://d26gfdfi90p7cf.cloudfront.net/rollbar-badge.144534.o.png)](https://rollbar.com)
-
-`[![Codestats](http://codestats-url/organizations/your-organization/projects/rails-graphql-bootstrap/badge)](http://codestats-url/organizations/your-organization/projects/rails-graphql-bootstrap/badge)`
-
 Kickoff for Rails web applications.
 
 ## Running local server
