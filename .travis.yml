@@ -17,7 +17,7 @@ before_script:
 
 script:
   - bundle exec rubocop app spec --format simple
-  - bundle exec rubycritic --minimum-score 80 --no-browser
   - bundle exec rspec spec -fd
   - bundle exec brakeman -q --no-summary
   - bundle audit check --update --quiet
+# - bundle exec rubycritic --minimum-score 80 --no-browser
