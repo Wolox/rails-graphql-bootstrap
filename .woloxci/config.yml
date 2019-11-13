@@ -17,7 +17,7 @@ steps:
   security:
     - bundle exec brakeman -q --no-summary
   audit:
-    - bundle audit check --update --quiet
+    - bundle exec bundle audit check --update --quiet
 
 environment:
   RAILS_ENV: test

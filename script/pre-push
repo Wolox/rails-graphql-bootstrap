@@ -34,7 +34,7 @@ then
 fi
 
 echo "\033[34mRunning bundler-audit\033[0m"
-RUN_CHECK_CMD='bundle audit check --update --quiet'
+RUN_CHECK_CMD='bundle exec bundle audit check --update --quiet'
 RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
 
 if [ $? -eq 1 ]
