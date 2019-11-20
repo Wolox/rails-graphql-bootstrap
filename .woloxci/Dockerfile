@@ -9,3 +9,4 @@ COPY . .
 
 # Bundler will raise an error if it does not have writable permissions in HOME
 ENV HOME /myapp
+RUN chmod a+rw /myapp
