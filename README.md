@@ -1,13 +1,17 @@
-Rails GraphQL Bootstrap
+RailsGraphqlBootstrap
 ===============
+
+Kickoff for Rails web applications.
+
+## Running local server
 
 ### Git pre push hook
 
-You can modify the [pre-push.sh](script/pre-push.sh) script to run different scripts before you `git push` (e.g Rspec, Linters). Then you need to run the following:
+You can modify the [pre-push](script/pre-push) script to run different scripts before you `git push` (e.g Rspec, Linters). Then you need to run the following:
 
 ```bash
-  chmod +x script/pre-push.sh
-  sudo ln -s ../../script/pre-push.sh .git/hooks/pre-push
+chmod +x script/pre-push
+ln -s ../../script/pre-push .git/hooks/pre-push
 ```
 
 You can skip the hook by adding `--no-verify` to your `git push`.
@@ -16,33 +20,32 @@ You can skip the hook by adding `--no-verify` to your `git push`.
 
 - Clone the repository by running `git clone git@github.com:Wolox/rails-graphql-bootstrap.git`
 - Go to the project root by running `cd rails-graphql-bootstrap`
-- Download and install [Rbenv](https://github.com/rbenv/rbenv#basic-github-checkout).
-- Download and install [Ruby-Build](https://github.com/rbenv/ruby-build#installing-as-an-rbenv-plugin-recommended).
-- Install the appropriate Ruby version by running `rbenv install [version]` where `version` is the one located in [.ruby-version](.ruby-version)
+- Download and install Rbenv and Ruby-Build as instructed by [GoRails guide](https://gorails.com/setup).
+- Install the appropriate Ruby version by running `rbenv install`.
 
 ### 2- Installing Rails gems
 
 - Install [Bundler](http://bundler.io/).
 
 ```bash
-  gem install bundler --no-ri --no-rdoc
-  rbenv rehash
+gem install bundler
+rbenv rehash
 ```
 - Install basic dependencies if you are using Ubuntu:
 
 ```bash
-  sudo apt-get install build-essential libpq-dev nodejs
+sudo apt-get install build-essential libpq-dev
 ```
 
 - Install all the gems included in the project.
 
 ```bash
-  bundle install
+bundle install
 ```
 
 ### [Kickoff] Application Setup
 
-Run `./script/bootstrap app_name` where `app_name` is your application name.
+Run `./script/bootstrap app-name` where `app-name` is your application name.
 
 Your app is ready. Happy coding!
 
@@ -51,18 +54,17 @@ Your app is ready. Happy coding!
 Run in terminal:
 
 ```bash
-  sudo -u postgres psql
-  CREATE ROLE "rails-graphql-bootstrap" LOGIN CREATEDB PASSWORD 'rails-graphql-bootstrap';
+sudo -u postgres psql
+CREATE ROLE "rails-graphql-bootstrap" LOGIN CREATEDB PASSWORD 'rails-graphql-bootstrap';
 ```
 
 Log out from postgres and run:
 
 ```bash
-  bundle exec rake db:create db:migrate
+bundle exec rake db:create db:migrate
 ```
 
 Your server is ready to run. You can do this by executing `rails server` and going to [http://localhost:3000](http://localhost:3000). Happy coding!
-
 
 ## Running with Docker
 
@@ -77,22 +79,16 @@ If you want to deploy your app using [Heroku](https://www.heroku.com) you need t
 - Add the Heroku Git URL to your remotes
 
 ```bash
-  git remote add heroku-prod your-git-url
-```
-
-- Configure the Heroku build packs and specify an order to run the npm-related steps first
-
-```bash
-  heroku buildpacks:clear
-  heroku buildpacks:set heroku/nodejs
-  heroku buildpacks:add heroku/ruby --index 2
+git remote add heroku-prod your-git-url
 ```
 
 - Push to Heroku
 
 ```bash
-	git push heroku-prod your-branch:master
+git push heroku-prod your-branch:master
 ```
+
+Read more [here](https://devcenter.heroku.com/articles/getting-started-with-rails6)
 
 ## Rollbar Configuration
 
@@ -103,30 +99,12 @@ with the credentials located in the rollbar application.
 
 If you have several servers with the same environment name you may want to difference them in Rollbar. For this set the `ROLLBAR_ENVIRONMENT` environment variable with your environment name.
 
-## Health Check
-
-Health check is a gem which makes an endpoint to check the status of the instance where this is running.
-It is configured for checking sidekiq and redis status, in addition to the migrations and the database. 
-The first two default features in this bootstrap, but if you want to disable them, you should keep an eye on the [configuration file](/config/initializers/health_check.rb) of this gem and do not forget to remove them from the checks.
-
-## Code Climate
-
-Add your code climate token to [.travis.yml](.travis.yml#L7) or [docker-compose.yml](docker-compose.yml)
-
-## Staging Environment
-
-For the staging environment label to work, set the `TRELLO_URL` environment variable.
-
-## Google Analytics
-
-Modified the `XX-XXXXXXX-X` code in the [_google_analytics.html.slim](app/views/layouts/_google_analytics.html.slim) file
-
 ## Brakeman
 
 To run the static analyzer for security vulnerabilities run:
 
 ```bash
-  bundle exec brakeman -z -i config/brakeman.ignore
+bundle exec brakeman
 ```
 
 ## Dotenv
@@ -156,9 +134,8 @@ The `.env` will be ignored by `git` so it won't be pushed into the repository, t
 You can find more documentation in the [docs](docs) folder. The documentation available is:
 
 - [Run locally with Docker](docs/docker.md)
-- [Deploy with Elastic Beanstalk](docs/deploy.rb)
-- [Locales structure](docs/locales.rb)
-- [Seeds](docs/seeds.rb)
+- [Locales structure](docs/locales.md)
+- [Seeds](docs/seeds.md)
 
 ## Contributing
 
@@ -166,10 +143,9 @@ You can find more documentation in the [docs](docs) folder. The documentation av
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Run rspec tests (`bundle exec rspec spec -fd`)
-5. Run scss lint (`bundle exec scss-lint app/assets/stylesheets/`)
-6. Run rubocop lint (`bundle exec rubocop app spec -R`)
-7. Push your branch (`git push origin my-new-feature`)
-8. Create a new Pull Request
+5. Run rubocop lint (`bundle exec rubocop app spec`)
+6. Push your branch (`git push origin my-new-feature`)
+7. Create a new Pull Request
 
 ## About
 
@@ -181,7 +157,7 @@ This project is maintained by [Wolox](https://github.com/wolox) and it is writte
 
 **rails-graphql-bootstrap** is available under the MIT [license](LICENSE).
 
-    Copyright (c) 2016 Esteban Guido Pintos <esteban.pintos@wolox.com.ar>
+    Copyright (c) 2019 X <X@wolox.com.ar>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
