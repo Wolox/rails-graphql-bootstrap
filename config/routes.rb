@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'application#index'
+  post "/graphql", to: "graphql#execute"
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  mount Sidekiq::Web, at: 'sidekiq'
+  mount Sidekiq::Web => '/sidekiq'
 end

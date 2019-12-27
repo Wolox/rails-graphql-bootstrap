@@ -25,8 +25,6 @@ The purpose of this document is to guide you on the correct usage of the locales
 
   - `models` - containing all locales related to models (such as attributes, model's name, model's error messages and so on)
 
-  - `views` - containing all locales associated with each controller's related views
-
 Each of the above folders contains other subfolders, each of them representing one particular aspect of the topic described by the parent folder.
 
 If we go deep into this structure, at the deepest level we will find one file per language locale. The default languages provided in this repository are `en` and `es`. Of course, each locale file must have the same structure, but with different locale texts.
@@ -317,7 +315,7 @@ es:
   application:
     index:
       messages:
-        welcome: Bienvenido al Bootstrap de Rails
+        welcome: Bienvenido a RailsGraphqlBootstrap
     messages:
       alerts:
         user_not_authorized: No está autorizado para realizar esta acción

@@ -1,6 +1,6 @@
 # Seeds
 
-This is a guide to use a custom task for running idividual seed files.
+This is a guide to use a custom task for running individual seed files.
 
 ## Problem
 
@@ -12,7 +12,7 @@ So for this cases we created a custom rake task that can deal with different see
 
 Say we have an e-commerce app and we want to create a seed file for the categories and subcategories (same info we will use in production).
 
-```
+```ruby
 # db/seeds/categories.rb
 Category.transaction do
   Category.create(name: 'Cell phones')
@@ -24,7 +24,7 @@ end
 Then you only need to run `bundle exec rake db:seed:categories` and this will run the `categories.rb` seed file alone.
 In order to create the categories in the normal seed you can simply:
 
-```
+```ruby
 # db/seeds.rb
 require_relative 'seeds/categories'
 ```
