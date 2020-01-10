@@ -58,6 +58,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'bullet'
+  gem 'graphiql-rails', '1.5.0'
 end
 
 group :test do
@@ -71,4 +72,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'graphql', '1.8.13'
 
-gem 'graphiql-rails', '1.5.0', group: :development
